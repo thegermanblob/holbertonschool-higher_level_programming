@@ -6,21 +6,20 @@
  */
 int check_cycle(listint_t *list)
 {
-	size_t array[1000];
-	int j, i = 0;
+	listint_t *tmp;
 
-	while (list->next)
+	tmp = list->next;
+
+	while(list->next)
 	{
-		array[i] = (size_t)list;
-		for (j = 0; j < i; j++)
-		{
-			if(array[j] == (size_t)list)
-				return (1);
-		}
-		list = list ->next;
-		i++;
+		if (list == tmp)
+			return (1);
+		list = list->next;
+		if (tmp->next)
+			tmp = tmp->next;
+		if (tmp->next)
+			tmp = tmp->next;
 	}
-	return (0);
+	return(0);
 }
-
 

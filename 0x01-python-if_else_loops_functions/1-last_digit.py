@@ -6,7 +6,7 @@ neg = False
 num = abs(number) % 10
 print("Last digit of {:d} is".format(number), end=" ")
 if number < 0:
-    number = num * -1
+    num = num * -1
     neg = True
     pos = False
 if num > 5 and pos:

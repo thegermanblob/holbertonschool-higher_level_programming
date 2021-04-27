@@ -2,10 +2,9 @@
 import random
 number = random.randint(-10000, 10000)
 pos = False
-ned = False
+neg = False
 print("Last digit of {:d} is".format(number), end=" ")
 if number < 0:
-    print("-", end="")
     number = number * -1
     neg = True
 else:
@@ -17,5 +16,7 @@ if number > 5 and pos:
 elif number is 0:
     print("{:.0f} and is 0".format(number))
 elif number < 6 or neg:
+    if neg:
+        print("-", end="")
     print("{:.0f} and is less than 6 and not 0".format(number))
 

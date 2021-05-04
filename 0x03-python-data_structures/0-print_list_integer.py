@@ -5,4 +5,3 @@ def print_list_integer(my_list=[]):
     while(idx < en):
         print("{:d}".format(my_list[idx]))
         idx += 1
-

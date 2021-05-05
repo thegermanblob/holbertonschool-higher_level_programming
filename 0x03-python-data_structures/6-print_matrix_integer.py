@@ -10,4 +10,4 @@ def print_matrix_integer(matrix=[[]]):
             if val != (len(matrix[row]) - 1):
                 print("", end=" ")
 
-        print("\n", end="")
+        print("")

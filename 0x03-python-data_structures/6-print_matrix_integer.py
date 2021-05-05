@@ -4,5 +4,8 @@ def print_matrix_integer(matrix=[[]]):
         return(None)
     for row in matrix:
         for val in row:
-            print ('{:d}'.format(val), end=" ")
+            print ('{:d}'.format(val), end="")
+            if (val % 3 != 0):
+                print("", end=" ")
+                
         print("")

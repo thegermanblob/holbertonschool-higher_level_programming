@@ -2,9 +2,9 @@
 def print_matrix_integer(matrix=[[]]):
     if (matrix is None):
         return(None)
-    for row in matrix:
-        for val in row:
-            print ('{:d}'.format(val), end="")
-            if (val % 3 != 0):
+    for row in range(len(matrix)):
+        for val in range(len(matrix[row])):
+            print ('{:d}'.format(matrix[row][val]), end="")
+            if val != (len(matrix[row]) - 1):
                 print("", end=" ")
         print("")

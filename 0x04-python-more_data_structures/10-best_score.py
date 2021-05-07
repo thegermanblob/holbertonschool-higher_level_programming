@@ -7,7 +7,6 @@ def best_score(a_dictionary):
             if comp < value:
                 comp = value
                 result = key
-        return(result)
+        return (result)
     else:
-        return(None)
-
+        return (None)

@@ -8,12 +8,12 @@ def safe_print_division(a, b):
     returns:
         result
         """
-    result = 0
+    result = None
     try:
         result = a / b
     except (TypeError):
         print("Inside result: None")
     finally:
-        print("Inside result: {}".format(result));
+        print("Inside result: {}".format(result))
 
         return result

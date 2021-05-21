@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Module that contains the matrix divider """
 
+
 def matrix_divided(matrix, div):
     """ function that divides a matrix by a number
 
@@ -28,7 +29,8 @@ def matrix_divided(matrix, div):
 
     if not all(len(row) == len(matrix[0]) for row in matrix):
             raise TypeError("Each row of the matrix must have the same size")
-    if not isinstance(div, int) and not isinstance(div,float):
+    if not isinstance(div, int) and not isinstance(div, float):
         raise TypeError("div must be a number")
 
-    return list(map(lambda x: list(map(lambda y: round(y / div, 2), x)), matrix))
+    return list(map(lambda x: list(map(lambda y: 
+        round(y / div, 2), x)), matrix))

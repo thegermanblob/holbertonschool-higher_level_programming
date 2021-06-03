@@ -6,4 +6,4 @@ def read_file(filename=""):
     """ Function that opens a file """
 
     with open(filename) as file:
-        print(file.read())
+        print(file.read(), end="")

@@ -5,5 +5,5 @@
 def read_file(filename=""):
     """ Function that opens a file """
 
-    with open(filename, 'r+') as file:
+    with open(filename, 'w') as file:
         pass

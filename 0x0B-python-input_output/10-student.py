@@ -13,13 +13,8 @@ class Student:
 
     def to_json(self, attrs=None):
         """ Retrieves dict representation of class """
-        if attrs is None:
-            return self.__dict__
-        elif type(attrs) == list:
-            i = 0
-            res_list = []
-            temp_list = self.__dict__
-            for item in temp_list:
-                if item == attrs[i]:
-                    res_list.append(item)
-                i += 1
+
+        if (type(attrs) == list and
+                all(type(item) == str for item in attrs)):
+            return {key: getattr(self, key) for key in attrs if hasattr(self, key)}
+        return self.__dict__

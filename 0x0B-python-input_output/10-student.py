@@ -13,14 +13,13 @@ class Student:
 
     def to_json(self, attrs=None):
         """ Retrieves dict representation of class """
-        if attrs == None:
+        if attrs is None:
             return self.__dict__
         elif type(attrs) == list:
             i = 0
-            res_list =[]
+            res_list = []
             temp_list = self.__dict__
             for item in temp_list:
                 if item == attrs[i]:
                     res_list.append(item)
                 i += 1
-

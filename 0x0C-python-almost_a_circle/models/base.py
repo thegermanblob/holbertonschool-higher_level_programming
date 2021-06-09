@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Module contains class Base """
 
+
 class Base:
     """ Base class """
 
@@ -113,14 +114,13 @@ class Base:
         import turtle
         import random
 
-
         for rec in list_rectangles:
             turtle.penup()
-            turtle.setpos(rec.x , rec.y)
+            turtle.setpos(rec.x, rec.y)
             turtle.pencolor((random.random(), random.random(),
-                random.random()))
+                            random.random()))
             turtle.pd()
-            for i in range(0,2):
+            for i in range(0, 2):
                 turtle.forward(rec.width)
                 turtle.right(90)
                 turtle.forward(rec.height)
@@ -128,13 +128,11 @@ class Base:
         for rec in list_squares:
             turtle.penup()
             turtle.pensize(5)
-            turtle.setpos(rec.x , rec.y)
+            turtle.setpos(rec.x, rec.y)
             turtle.pencolor((random.random(), random.random(),
-                random.random()))
+                            random.random()))
             turtle.pd()
-            for i in range(0,4):
+            for i in range(0, 4):
                 turtle.forward(rec.width)
                 turtle.right(90)
         turtle.exitonclick()
-
-

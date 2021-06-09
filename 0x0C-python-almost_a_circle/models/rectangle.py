@@ -22,6 +22,8 @@ class Rectangle(Base):
     @width.setter
     def width(self, width):
         """ Sets and validates width """
+        if type(width) is str:
+            width = int(width)
         if type(width) is not int:
             raise TypeError("width must be an integer")
         if width < 0:
@@ -36,6 +38,8 @@ class Rectangle(Base):
     @height.setter
     def height(self, height):
         """ Sets and validates height """
+        if type(height) is str:
+            height = int(height)
         if type(height) is not int:
             raise TypeError("height must be an integer")
         if height < 0:
@@ -50,6 +54,8 @@ class Rectangle(Base):
     @x.setter
     def x(self, x):
         """ Sets and validates x """
+        if type(x) is str:
+            x = int(x)
         if type(x) is not int:
             raise TypeError("x must be an integer")
         if x < 0:
@@ -64,6 +70,8 @@ class Rectangle(Base):
     @y.setter
     def y(self, y):
         """ Sets and validates y """
+        if type(y) is str:
+            y = int(y)
         if type(y) is not int:
             raise TypeError("y must be an integer")
         if y < 0:
@@ -88,7 +96,7 @@ class Rectangle(Base):
         """ Assigns argument to each attribute """
         argc = len(args)
         if argc > 0:
-            self.id = args[0]
+            self.id = int(args[0])
             if argc > 1:
                 self.width = args[1]
                 if argc > 2:
@@ -99,7 +107,7 @@ class Rectangle(Base):
                             self.y = args[4]
         elif kwargs is not None:
             if "id" in kwargs:
-                self.id = kwargs['id']
+                self.id = int(kwargs['id'])
             if "width" in kwargs:
                 if type(kwargs['width']) is not int:
                     intwidth = int(kwargs['width'])

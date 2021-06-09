@@ -113,6 +113,7 @@ class Base:
         import turtle
         import random
 
+
         for rec in list_rectangles:
             turtle.penup()
             turtle.setpos(rec.x , rec.y)
@@ -123,6 +124,16 @@ class Base:
                 turtle.forward(rec.width)
                 turtle.right(90)
                 turtle.forward(rec.height)
+                turtle.right(90)
+        for rec in list_squares:
+            turtle.penup()
+            turtle.pensize(5)
+            turtle.setpos(rec.x , rec.y)
+            turtle.pencolor((random.random(), random.random(),
+                random.random()))
+            turtle.pd()
+            for i in range(0,4):
+                turtle.forward(rec.width)
                 turtle.right(90)
         turtle.exitonclick()
 

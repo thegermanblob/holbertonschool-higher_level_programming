@@ -71,3 +71,49 @@ class Base:
         except FileNotFoundError:
             return []
         return [cls.create(**kwargs) for kwargs in list_json]
+    """ check for update method and fin dit use it to fix create and from there make the loader work by making a list of objs from dicts """
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ Saves to file in csv format """
+
+        import csv
+
+        filename = cls.__name__ + ".csv"
+        dict_list = []
+        for item in list_objs:
+            itemdict = item.to_dictionary()
+            dict_list.append(itemdict)
+        if cls.__name__ is "Square":
+            fields = ['x', 'y', 'id', 'size']
+        else:
+            fields = ['x', 'y', 'id', 'height', 'width']
+        with open(filename, "w") as myfile:
+            csv_writer = csv.DictWriter(myfile, fieldnames= fields )
+
+            csv_writer.writeheader()
+            csv_writer.writerows(dict_list)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ loads objects from csv file """
+        import csv
+
+        dict_list = []
+        filename = cls.__name__ + ".csv"
+        with open(filename, 'r') as myfile:
+            csv_reader = csv.DictReader(myfile)
+
+            for lines in csv_reader:
+                dict_list.append(lines)
+
+        return [cls.create(**kwargs) for kwargs in dict_list]
+
+
+    def draw(list_rectangles, list_squares):
+        """ draws objs """
+        import turtle
+
+        turtle.forward(30)
+
+

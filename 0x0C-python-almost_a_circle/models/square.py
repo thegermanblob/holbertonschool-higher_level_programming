@@ -35,7 +35,11 @@ class Square(Rectangle):
         else:
             super().update(**kwargs)
             if "size" in kwargs:
-                self.width = kwargs['size']
+                if type(kwargs['size']) is not int:
+                    intsize = int(kwargs['size'])
+                    self.width = intsize
+                else:
+                    self.width = kwargs['size']
 
     def __str__(self):
         """ Returns string representation of square """

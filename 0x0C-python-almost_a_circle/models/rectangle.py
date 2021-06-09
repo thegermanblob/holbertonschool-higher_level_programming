@@ -101,13 +101,29 @@ class Rectangle(Base):
             if "id" in kwargs:
                 self.id = kwargs['id']
             if "width" in kwargs:
-                self.width = kwargs['width']
+                if type(kwargs['width']) is not int:
+                    intwidth = int(kwargs['width'])
+                    self.width = intwidth
+                else:
+                    self.width = kwargs['width']
             if "height" in kwargs:
-                self.height = kwargs['height']
+                if type(kwargs['height']) is not int:
+                    intheight = int(kwargs['height'])
+                    self.height = intheight
+                else:
+                    self.height = kwargs['height']
             if "x" in kwargs:
-                self.x = kwargs['x']
+                if type(kwargs['x']) is not int:
+                    intx = int(kwargs['x'])
+                    self.x = intx
+                else:
+                    self.x = kwargs['x']
             if "y" in kwargs:
-                self.y = kwargs['y']
+                if type(kwargs['y']) is not int:
+                    inty = int(kwargs['y'])
+                    self.y = inty
+                else:
+                    self.y = kwargs['x']
 
     def to_dictionary(self):
         """ converts obj to dictionary format """

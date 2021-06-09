@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """ Module contains class Base """
 
-
 class Base:
     """ Base class """
 
@@ -71,7 +70,6 @@ class Base:
         except FileNotFoundError:
             return []
         return [cls.create(**kwargs) for kwargs in list_json]
-    """ check for update method and fin dit use it to fix create and from there make the loader work by making a list of objs from dicts """
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
@@ -89,7 +87,7 @@ class Base:
         else:
             fields = ['x', 'y', 'id', 'height', 'width']
         with open(filename, "w") as myfile:
-            csv_writer = csv.DictWriter(myfile, fieldnames= fields )
+            csv_writer = csv.DictWriter(myfile, fieldnames=fields)
 
             csv_writer.writeheader()
             csv_writer.writerows(dict_list)
@@ -109,11 +107,23 @@ class Base:
 
         return [cls.create(**kwargs) for kwargs in dict_list]
 
-
+    @staticmethod
     def draw(list_rectangles, list_squares):
         """ draws objs """
         import turtle
+        import random
 
-        turtle.forward(30)
+        for rec in list_rectangles:
+            turtle.penup()
+            turtle.setpos(rec.x , rec.y)
+            turtle.pencolor((random.random(), random.random(),
+                random.random()))
+            turtle.pd()
+            for i in range(0,2):
+                turtle.forward(rec.width)
+                turtle.right(90)
+                turtle.forward(rec.height)
+                turtle.right(90)
+        turtle.exitonclick()
 
 

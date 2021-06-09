@@ -131,7 +131,7 @@ class Rectangle(Base):
                     inty = int(kwargs['y'])
                     self.y = inty
                 else:
-                    self.y = kwargs['x']
+                    self.y = kwargs['y']
 
     def to_dictionary(self):
         """ converts obj to dictionary format """

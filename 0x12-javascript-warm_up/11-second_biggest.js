@@ -7,5 +7,6 @@ if (isNaN(process.argv[2])) {
 const array = process.argv;
 array.shift();
 array.shift();
-const arrsort = array.sort((a, b) => a - b);
+const arrsorted = [...new Set(array)];
+const arrsort = arrsorted.sort((a, b) => a - b);
 console.log(arrsort[arrsort.length - 2]);

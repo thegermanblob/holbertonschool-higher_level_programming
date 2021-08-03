@@ -1,6 +1,6 @@
-#!usr/bin/node
+#!usr/bin/nodeZ
 module.exports = class Rectangle {
-  constructor (h, w) {
+  constructor (w, h) {
     if (!isNaN(h) && !isNaN(w) && (h > 0 && w > 0)) {
       this.height = h;
       this.width = w;
@@ -8,12 +8,12 @@ module.exports = class Rectangle {
   }
 
   print () {
-    for (let y = 0; y <= this.height; ++y) {
+    for (let y = 0; y < this.height; ++y) {
       let str = '';
-      for (let x = 0; x <= this.height; ++x) {
-        str += 'X';
+      for (let x = 0; x < this.width; ++x) {
+        process.stdout.write("X");
       }
-      console.log(str);
+      process.stdout.write("\n");
     }
   }
 };

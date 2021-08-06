@@ -10,7 +10,7 @@ dbname = sys.argv[3]
 db = MySQLdb.connect("localhost", user, pswd, dbname)
 
 cursor = db.cursor()
-sql = "SELECT cities.id, cities.name, states.name \
+sql = "SELECT DISTINCT cities.id, cities.name, states.name \
         FROM cities INNER JOIN states ON cities.state_id = states.id;"
 try:
     cursor.execute(sql)

@@ -12,11 +12,8 @@ if __name__ == "__main__":
 
     cursor = db.cursor()
     sql = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id asc;"
-    try:
-        cursor.execute(sql)
-        results = cursor.fetchall()
-        for item in results:
-            print(item)
-    except:
-        print("Failed to fetch data")
+    cursor.execute(sql)
+    results = cursor.fetchall()
+    for item in results:
+        print(item)
     db.close()

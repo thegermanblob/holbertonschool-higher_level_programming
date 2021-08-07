@@ -12,4 +12,4 @@ if __name__ == "__main__":
     session = Session()
     states = session.query(State).order_by(State.id)
     for instance in states:
-        print(str(instance.id) + ": " + instance.name)
+        print("{}: {}".format(instance.id, instance.name))

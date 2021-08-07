@@ -16,7 +16,7 @@ if __name__ == "__main__":
         cursor.execute(sql)
         results = cursor.fetchall()
         for item in results:
-            print(item)
+            print(str(item))
     except:
         print("Failed to fetch data")
     db.close()

@@ -25,6 +25,4 @@ if __name__ == "__main__":
     except:
         print(sql)
         print("Failed to fetch data")
-
-
     db.close()

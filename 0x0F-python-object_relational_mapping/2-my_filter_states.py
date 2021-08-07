@@ -19,8 +19,5 @@ if __name__ == "__main__":
         for item in results:
             print(item)
     except:
-        print(sql)
         print("Failed to fetch data")
-
-
     db.close()

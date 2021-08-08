@@ -17,5 +17,5 @@ if __name__ == "__main__":
     if states is None:
         print("Nothing")
     else:
-        instance = states[0]
+        instance = states
         print(str(instance.id) + ": " + instance.name)

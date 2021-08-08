@@ -19,9 +19,8 @@ if __name__ == "__main__":
         row = State(name="Louisiana")
         session.add(row)
         session.commit()
+        print(row.id)
     except SQLAlchemyError as e:
         print(e)
-    query = session.query(State)
-    for row in query:
-        print("{}: {}".format(row.id, row.name))
-
+    finally:
+        session.close()

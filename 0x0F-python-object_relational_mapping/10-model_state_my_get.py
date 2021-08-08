@@ -2,8 +2,9 @@
 """  prints the State object with the name passed as argument from the database """
 import sys
 from model_state import Base, State
-from sqlalchemy import (create_engine)
+from sqlalchemy import create_engine, text
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy.dialects import postgresql
 
 if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(sys.
@@ -16,6 +17,9 @@ if __name__ == "__main__":
         stateNameP = stateName.split(" ", 1)
     except:
         raise ValueError('Incorrect format')
-    states = session.query(State).filter(State.name.like(stateNameP))
-    if states is None:
-        print(states)
+    query = session.query(State).filter(text("name='{}'".format(stateNameP[0])))
+    state = query.first()
+    if state is None:
+        print("Not found")
+    else:
+        print(state.id)

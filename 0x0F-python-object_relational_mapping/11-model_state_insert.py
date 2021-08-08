@@ -21,5 +21,7 @@ if __name__ == "__main__":
         session.commit()
     except SQLAlchemyError as e:
         print(e)
-    finally:
-        session.close()
+    query = session.query(State)
+    for row in query:
+        print("{}: {}".format(row.id, row.name))
+

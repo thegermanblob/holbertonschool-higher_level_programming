@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 #take 3 arguments: mysql username, mysql password and database name """
+# Usage: ./8-model_state_fetch_first.py <mysql username> /
+#                                       <mysql password> /
+#                                       <database name>
 import sys
 from model_state import Base, State
 from sqlalchemy import (create_engine)

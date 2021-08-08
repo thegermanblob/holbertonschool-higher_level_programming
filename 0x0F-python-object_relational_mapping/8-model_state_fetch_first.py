@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-""" Module prints the first State object from the database
-    take 3 arguments: mysql username, mysql password and database name """
+""" Module prints the first State object from the database """
 
 
 import sys

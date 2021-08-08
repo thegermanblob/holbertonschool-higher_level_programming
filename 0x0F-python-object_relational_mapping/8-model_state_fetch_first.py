@@ -1,10 +1,12 @@
 #!/usr/bin/python3
+# Prints the first State object from the database
+# Usage: ./8-model_state_fetch_first.py <mysql username> /
+#                                       <mysql password> /
+#                                       <database name>
 import sys
 from model_state import Base, State
 from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
-""" Module prints the first State object from the database
-    take 3 arguments: mysql username, mysql password and database name """
 
 if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format

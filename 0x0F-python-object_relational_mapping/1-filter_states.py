@@ -11,12 +11,13 @@ if __name__ == "__main__":
     db = MySQLdb.connect("localhost", user, pswd, dbname)
 
     cursor = db.cursor()
-    sql = "SELECT id, name FROM states WHERE name LIKE 'N%' ORDER BY id asc;"
+    sql = "SELECT id, name FROM states WHERE name like 'N%' ORDER BY id asc;"
     try:
         cursor.execute(sql)
         results = cursor.fetchall()
         for item in results:
-            print(str(item))
+            if item[1][0] == 'N':
+                print(item)
     except:
         print("Failed to fetch data")
     db.close()

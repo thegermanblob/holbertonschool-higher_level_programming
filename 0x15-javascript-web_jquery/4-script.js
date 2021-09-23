@@ -3,4 +3,4 @@ $('document').ready(function () {
         $('header').toggleClass('green');
         $('header').toggleClass('red');
     });
-})
+});

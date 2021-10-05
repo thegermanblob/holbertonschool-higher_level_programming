@@ -30,7 +30,7 @@ The specific list of projects contained follows:
 
 ## Author
 
-* ** Andres Morales** <[thegermanblob](https://github.com/thegermanblob)>
+* **Andres Morales** <[thegermanblob](https://github.com/thegermanblob)>
 
 ## Acknowledgements
 
